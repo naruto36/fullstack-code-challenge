@@ -16,10 +16,8 @@ const databaseConn = async () => {
             finishedAt: null,
         };
 
-        // Save the result entity
         const result = resultRepository.create(newResult);
 
-        // Save the result entity
         await resultRepository.save(result);
         console.log('Database connected successfully');
 

@@ -23,7 +23,6 @@ export const getResults = async (req: Request, res: Response) => {
         const resultRepository = getRepository(Result);
         const results = await resultRepository.find();
 
-        // We are fetching data from our json file
         results.forEach(result => {
             result.findings = exampleFindings;
         });

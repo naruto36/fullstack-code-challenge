@@ -1,25 +1,25 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Result {
     @PrimaryGeneratedColumn()
-    id: number = 0; // Initialize with a default value, though in practice, this will be auto-generated
+    id: number = 0;
 
     @Column({ type: 'enum', enum: ['Queued', 'In Progress', 'Success', 'Failure'] })
-    status: 'Queued' | 'In Progress' | 'Success' | 'Failure' = 'Queued'; // Default value
+    status: 'Queued' | 'In Progress' | 'Success' | 'Failure' = 'Queued';
 
     @Column()
-    repositoryName: string = ''; // Default value or initialization
+    repositoryName: string = '';
 
     @Column('jsonb')
-    findings: any = {}; // Default value or initialization
+    findings: any = {};
 
     @Column({ type: 'timestamp', nullable: true })
-    queuedAt: Date | null = null; // Default value or initialization
+    queuedAt: Date | null = null;
 
     @Column({ type: 'timestamp', nullable: true })
-    scanningAt: Date | null = null; // Default value or initialization
+    scanningAt: Date | null = null;
 
     @Column({ type: 'timestamp', nullable: true })
-    finishedAt: Date | null = null; // Default value or initialization
+    finishedAt: Date | null = null;
 }

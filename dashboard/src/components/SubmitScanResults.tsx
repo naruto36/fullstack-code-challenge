@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, Label } from 'semantic-ui-react';
+import { Button, Form, Input } from 'semantic-ui-react';
 import axios from 'axios';
 
 const SubmitScanResults: React.FC = () => {
