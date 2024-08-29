@@ -1,0 +1,17 @@
+FROM node:14
+  
+  # Set the working directory
+WORKDIR /usr/src/app
+  
+  # Install dependencies
+COPY package*.json ./
+RUN npm install
+  
+  # Build TypeScript code
+RUN npm run build
+  
+  # Expose the port  app runs on
+EXPOSE 3001
+  
+  # Start the application
+CMD ["node", "dist/index.js"]
